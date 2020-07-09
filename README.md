@@ -4,7 +4,7 @@ Tensorflow Docker with Jupyter
 *Assuming that Ubuntu is used.*
 
 ## 0) Installing Docker:
-Run `bash install-docker.sh` to install docker (half-automated). Installation instructions are similar to the one in [https://docs.docker.com/engine/install/ubuntu/](Docker Website)
+Run `bash install-docker.sh` to install docker (half-automated). Installation instructions are similar to the one in [Docker Website](https://docs.docker.com/engine/install/ubuntu/).
 
 ## 1) Pulling Tensorflow Docker image and running in a container:
 Run `ts-docker.sh` to pull docker image and mount volumes. 
@@ -16,7 +16,7 @@ Mounted volumes can be changed in the -v command (i.e. Assuming that you have a 
 
 Ports can be configured in the -p argument. 
 
-To link a Docker container with another Docker container, use `--link <container_to_link>:<container_to_link>`. Details on container linking at [https://docs.docker.com/network/links/](Legacy Container Links website).
+To link a Docker container with another Docker container, use `--link <container_to_link>:<container_to_link>`. Details on container linking at [Legacy Container Links website](https://docs.docker.com/network/links/).
 
 ## 2) Installing packages in the container
 Once in the container, run `bash install.sh` to install the packages. Packages installed using apt-get will be installed from `packages.sh`, while packages installed using pip will be installed from `requirements.txt`. Edit the files accordingly for packages to be installed.
