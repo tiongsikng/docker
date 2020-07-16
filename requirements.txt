@@ -3,13 +3,11 @@ keras
 torch
 torchvision
 scipy
-six
 numpy
 Pillow
 opencv-python
 scikit-learn
 matplotlib
-scikit-image
 opencv-python
 imgaug
 imageio
