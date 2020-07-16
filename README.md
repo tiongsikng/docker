@@ -31,7 +31,7 @@ Once in the container, run `bash install.sh` to install the packages. Packages i
 
 ## 3) Jupyterlab 
 Once in the container, enter the following command to run Jupyterlab
-`jupyterlab --ip=127.0.0.1 --port=8888 --allow-root`
+`jupyter lab --ip=127.0.0.1 --port=8888 --allow-root`
 
 *Note: Port should first be changed accordingly in `ts_docker.sh` file to enable running. To enter Jupyter, click on the link in terminal, or enter [127.0.0.1:8888](127.0.0.1:8888). Enter the token provided in the terminal to start browsing. The IP and port should be changed accordingly based on how the Jupyter notebook command is run.*
 
