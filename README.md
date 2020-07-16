@@ -14,13 +14,13 @@ Run `ts_docker.sh` to pull docker image and mount volumes.
 Details:
 The last line specifies the image being pulled, (i.e. tensorflow/tensorflow for Tensorflow Image, nvidia/cuda:10.0-base for Cuda 10.0 Image), can be changed accordingly. If Cuda Image is pulled, run `nvidia-smi` to test if NVIDIA is working in the container.
 
-Mounted volumes can be changed in the -v command (i.e. Assuming that you have a folder in home directory, the same folder that you want to mount will appear in the docker container, and any changes you make in that folder will also be changed in the Docker container automatically). 
+Mounted volumes can be changed in the `-v` command (i.e. Assuming that you have a folder in home directory, the same folder that you want to mount will appear in the docker container, and any changes you make in that folder will also be changed in the Docker container automatically). To be specific, the command is run such that `-v <directory in your Ubuntu to link>\<directory in the Docker container>`.
 
-`--gpus all argument` is to enable running the computer with GPU.
+`--gpus all` argument is to enable running the computer with GPU.
 
 Ports can be configured in the -p argument. 
 
-`-- name *name*` specifies the container name, instead of randomly generated names.
+`-- name <name>` specifies the container name, instead of randomly generated names by Docker.
 
 To link a Docker container with another Docker container, use `--link <container_to_link>:<container_to_link>`. Details on container linking at [Legacy Container Links website](https://docs.docker.com/network/links/).
 
