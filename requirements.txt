@@ -16,6 +16,7 @@ nltk
 tqdm
 joblib
 ipython
+jupyterlab
 jupyter
 torch
 torchvision
