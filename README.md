@@ -20,7 +20,7 @@ Mounted volumes can be changed in the `-v` command (i.e. Assuming that you have 
 
 Ports can be configured in the -p argument. 
 
-`-- name <name>` specifies the container name, instead of randomly generated names by Docker.
+`--name <name>` specifies the container name, instead of randomly generated names by Docker.
 
 To link a Docker container with another Docker container, use `--link <container_to_link>:<container_to_link>`. Details on container linking at [Legacy Container Links website](https://docs.docker.com/network/links/).
 
