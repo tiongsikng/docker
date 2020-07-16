@@ -1,5 +1,5 @@
 ### docker
-NVIDIA Cuda Docker
+NVIDIA Cuda Docker with Jupyterlab
 
 *Assuming that Ubuntu is used.*
 
@@ -29,9 +29,9 @@ Once in the container, run `bash install.sh` to install the packages. Packages i
 
 *Note: The most straightforward way to do so is by putting `install.sh`, `packages.sh`, `requirements.txt` inside a mounted folder (and changing directory) to be able to install the necessary packages. Running the `bash install.sh` script will automatically install the packages inside the Docker container. Else, you may create your own script or manually install it yourself.*
 
-## 3) Jupyter Notebook (Optional)
-To run Jupyter notebook, enter the command
-`jupyter notebook --ip=127.0.0.1 --port=8888 --allow-root`
+## 3) Jupyterlab 
+Once in the container, enter the following command to run Jupyterlab
+`jupyterlab --ip=127.0.0.1 --port=8888 --allow-root`
 
 Port should first be changed accordingly in `ts_docker.sh` file to enable running. To enter Jupyter, click on the link in terminal, or enter [127.0.0.1:8888](127.0.0.1:8888). Enter the token provided in the terminal to start browsing. The IP and port should be changed accordingly based on how the Jupyter notebook command is run.
 
