@@ -1,20 +1,26 @@
 ### docker
-Tensorflow Docker with Jupyter
+NVIDIA Cuda Docker
 
 *Assuming that Ubuntu is used.*
 
-## 0) Installing Docker:
+## 0) Installing Docker and NVIDIA Container Runtime:
 Run `bash install-docker.sh` to install docker (half-automated). Installation instructions are similar to the one in [Docker Website](https://docs.docker.com/engine/install/ubuntu/).
 
-## 1) Pulling Tensorflow Docker image and running in a container:
-Run `ts-docker.sh` to pull docker image and mount volumes. 
+Run `nvidia-container-runtime.sh` to install NVIDIA Docker container runtime. Installation instructions are from [NVIDIA Docker Github](https://github.com/NVIDIA/nvidia-docker). After the script is executed completely, run `docker run --gpus all nvidia/cuda:10.0-base nvidia-smi` to test if NVIDIA is working properly with the container.
+
+## 1) Pulling Cuda Docker Image and running in a container:
+Run `ts_docker.sh` to pull docker image and mount volumes.
 
 Details:
-The last line specifies the image being pulled, in this case tensorflow/tensorflow for Tensorflow Image, can be changed accordingly. 
+The last line specifies the image being pulled, (i.e. tensorflow/tensorflow for Tensorflow Image, nvidia/cuda:10.0-base for Cuda 10.0 Image), can be changed accordingly. If Cuda Image is pulled, run `nvidia-smi` to test if NVIDIA is working in the container.
 
 Mounted volumes can be changed in the -v command (i.e. Assuming that you have a folder in home directory, the same folder that you want to mount will appear in the docker container, and any changes you make in that folder will also be changed in the Docker container automatically). 
 
+`--gpus all argument` is to enable running the computer with GPU.
+
 Ports can be configured in the -p argument. 
+
+`-- name *name*` specifies the container name, instead of randomly generated names.
 
 To link a Docker container with another Docker container, use `--link <container_to_link>:<container_to_link>`. Details on container linking at [Legacy Container Links website](https://docs.docker.com/network/links/).
 
