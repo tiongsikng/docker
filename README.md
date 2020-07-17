@@ -1,14 +1,14 @@
-### docker
-NVIDIA Cuda Docker with Jupyterlab.
+# docker
+[NVIDIA Cuda Docker](https://hub.docker.com/r/nvidia/cuda/) with [JupyterLab](https://jupyterlab.readthedocs.io/en/stable/getting_started/overview.html).
 
 *Assuming that Ubuntu is used.*
 
-## 0) Installing Docker and NVIDIA Container Runtime:
+### 0) Installing Docker and NVIDIA Container Runtime:
 Run `bash install-docker.sh` to install docker (half-automated). Installation instructions are similar to the one in [Docker Website](https://docs.docker.com/engine/install/ubuntu/).
 
 Run `nvidia-container-runtime.sh` to install NVIDIA Docker container runtime. Installation instructions are from [NVIDIA Docker Github](https://github.com/NVIDIA/nvidia-docker). After the script is executed completely, run `docker run --gpus all nvidia/cuda:10.0-base nvidia-smi` to test if NVIDIA is working properly with the container.
 
-## 1) Pulling Cuda Docker Image and running in a container:
+### 1) Pulling Cuda Docker Image and running in a container:
 Run `ts_docker.sh` to pull docker image and mount volumes.
 
 Details:
@@ -24,18 +24,18 @@ Ports can be configured in the -p argument.
 
 To link a Docker container with another Docker container, use `--link <container_to_link>:<container_to_link>`. Details on container linking at [Legacy Container Links website](https://docs.docker.com/network/links/).
 
-## 2) Installing packages in the container
+### 2) Installing packages in the container
 Once in the container, run `bash install.sh` to install the packages. Packages installed using apt-get will be installed from `packages.sh`, while packages installed using pip will be installed from `requirements.txt`. Edit the files accordingly for packages to be installed.
 
 *Note: The most straightforward way to do so is by putting `install.sh`, `packages.sh`, `requirements.txt` inside a mounted folder (and changing directory) to be able to install the necessary packages. Running the `bash install.sh` script will automatically install the packages inside the Docker container. Else, you may create your own script or manually install it yourself.*
 
-## 3) Jupyterlab 
-Once in the container, enter the following command to run Jupyterlab
+### 3) JupyterLab 
+Once in the container, enter the following command to run JupyterLab
 `jupyter lab --ip=127.0.0.1 --port=8888 --allow-root`
 
 *Note: Port should first be changed accordingly in `ts_docker.sh` file to enable running. To enter Jupyter, click on the link in terminal, or enter [127.0.0.1:8888](127.0.0.1:8888). Enter the token provided in the terminal to start browsing. The IP and port should be changed accordingly based on how the Jupyter notebook command is run.*
 
-## \* Basic Docker commands
+### \* Basic Docker commands
 * *Check (active) containers:* `docker ps (-a)`
 * *Check images:* `docker images`
 * *Pull images from Docker repository:* `docker pull image(/image):image-tags`
