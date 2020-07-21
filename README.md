@@ -1,4 +1,4 @@
-# docker
+# Docker
 [NVIDIA Cuda Docker](https://hub.docker.com/r/nvidia/cuda/) with [JupyterLab](https://jupyterlab.readthedocs.io/en/stable/getting_started/overview.html).
 
 *Assuming that Ubuntu is used.*
@@ -16,7 +16,7 @@ The last line specifies the image being pulled, (i.e. tensorflow/tensorflow for 
 
 Mounted volumes can be changed in the `-v` command (i.e. Assuming that you have a folder in home directory, the same folder that you want to mount will appear in the docker container, and any changes you make in that folder will also be changed in the Docker container automatically). To be specific, the command is run such that `-v <directory in your Ubuntu to link>\<directory in the Docker container>`. PycharmProjects directory is also mounted in the script to be used with Pycharm.
 
-`--gpus all` argument is to enable running the computer with GPU.
+`--gpus all` argument is to enable running the container with GPU.
 
 Ports can be configured in the -p argument. 
 
