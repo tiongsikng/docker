@@ -3,7 +3,7 @@ keras
 torch
 torchvision
 scipy
-numpy==1.15.0
+numpy
 Pillow
 opencv-python
 scikit-learn
@@ -19,3 +19,4 @@ tqdm
 joblib
 ipython
 jupyterlab
+pycrypto
